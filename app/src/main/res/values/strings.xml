@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MementoPractice</string>
+    <string name="note_tips">write some</string>
+    <string name="save">Save</string>
+    <string name="redo">Redo</string>
+    <string name="undo">Undo</string>
 </resources>
