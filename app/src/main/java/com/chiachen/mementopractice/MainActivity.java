@@ -67,20 +67,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void restoreText(Memento memento) {
+        mEditText.setText(memento.text);
+        mEditText.setSelection(memento.cursor);
     }
 
     public Memento getPrevMemento() {
-        return null;
+        mIndex = mIndex > 0 ? --mIndex : mIndex;
+        return mMementos.get(mIndex);
     }
 
     public Memento getNextMemento() {
-        return null;
+        mIndex = mIndex < mMementos.size() - 1 ? ++mIndex : mIndex;
+        return mMementos.get(mIndex);
     }
 
     private Memento createMementoFromEditText() {
-        return null;
+        Memento memento = new Memento();
+        memento.text = mEditText.getText().toString();
+        memento.cursor = mEditText.getSelectionStart();
+        return memento;
     }
 
     private void saveMemento(Memento memento) {
+        if (MAX_RECORD < mMementos.size()) {
+            mMementos.remove(0);
+        }
+        mMementos.add(memento);
+        mIndex = mMementos.size() - 1;
     }
 }
