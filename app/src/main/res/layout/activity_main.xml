@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.chiachen.mementopractice.MainActivity">
 
-    <EditText
+    <com.chiachen.mementopractice.NoteEditText
         android:id="@+id/note_edittext"
         android:layout_width="match_parent"
         android:layout_height="0dp"
